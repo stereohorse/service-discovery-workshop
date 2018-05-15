@@ -29,6 +29,21 @@
 > docker login
 ```
 
+### Установить JDK 8
+
+По этой [ссылке](http://www.oracle.com/technetwork/java/javase/downloads/index.html). После установки проверяем версию:
+
+```bash
+$ javac -version
+
+javac 1.8.0_<номер, котрый можно проигнорировать>
+```
+
+### Установить редактор IntelliJ IDEA
+
+Подойдёт и Community Edition.
+
+
 ## Проверяем установку
 
 ```bash
