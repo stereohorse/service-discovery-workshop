@@ -1,8 +1,0 @@
-- hosts: masters
-  tasks:
-    - name: start pikachu server
-      uri:
-        url: "http://localhost:8080/v2/apps?force=true"
-        method: PUT
-        body: "{{ lookup('template','manifests/pikachu-server-manifest.json') }}"
-        body_format: json
