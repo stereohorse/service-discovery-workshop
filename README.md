@@ -32,8 +32,12 @@
 ## Проверяем установку
 
 ```bash
+# загружаем этот репозиторий
 git clone git@github.com:stereohorse/service-discovery-workshop.git
+
 cd service-discovery-workshop
+
+# запускаем виртуальные машины
 vagrant up
 ```
 
