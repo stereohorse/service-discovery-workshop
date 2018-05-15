@@ -39,7 +39,7 @@ $ javac -version
 javac 1.8.0_<номер, котрый можно проигнорировать>
 ```
 
-### Установить редактор IntelliJ IDEA
+### Установить IntelliJ IDEA
 
 Подойдёт и Community Edition.
 
