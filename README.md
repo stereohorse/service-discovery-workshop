@@ -48,7 +48,7 @@ javac 1.8.0_<номер, котрый можно проигнорировать>
 
 ```bash
 # загружаем этот репозиторий
-git clone git@github.com:stereohorse/service-discovery-workshop.git
+git clone https://github.com/stereohorse/service-discovery-workshop.git
 
 cd service-discovery-workshop
 
