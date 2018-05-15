@@ -6,7 +6,7 @@
 
 ```bash
 > brew cask install docker virtualbox vagrant \
-    && brew install ansible
+    && brew install ansible httpie haproxy
 ```
 
 ### Установить hostmanager плагин для vagrant
