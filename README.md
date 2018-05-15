@@ -1,73 +1,49 @@
-# Подготовка среды для тренинга по инфраструктуре
+# Подготовка среды для тренинга по Service Discovery
 
-Может занять **около получаса**. В основном - ожидание загрузки образов.
-Поэтому лучше сделать заранее.
-
-Инструкция написана для Macos. При установке может быть полезна [эта утилитка](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man8/caffeinate.8.html).
-
-С таким же успехом можно настроить и Linux-дистрибутив, используя вместо `brew` родной менеджер пакетов. 
-
-На Windows, увы, за вменяемое время можно только поднять в виртуалке. Но при этом учитывай, что на тренинге мы будем  поднимать свои виртуалки. Так что придётся в этом случае как-то уживаться с как правило тормозящей вложенной виртуализацией.
-
-## Шаги
+## Настройка
 
 ### Установить инструменты
 
-1. docker
-2. virtualbox
-3. vagrant
-4. ansible
-5. python 3
-
-### Подготовить vagrant
-
-Загрузить образ vagrant **stereohorse/alfa-infra-sandbox**. Это самое долгое :)
-
-## Одним копи-пастом
-
 ```bash
-$ brew cask install docker virtualbox vagrant \
-    && brew install ansible python3 \
-    && vagrant box add stereohorse/alfa-infra-sandbox
+> brew cask install docker virtualbox vagrant \
+    && brew install ansible
 ```
 
-## Подробнее
-
-### Docker
+### Установить hostmanager плагин для vagrant
 
 ```bash
-$ brew cask install docker
+> vagrant plugin install vagrant-hostmanager
 ```
 
-После этого нужно запустить Docker.app, к примеру через Spotlight.
-Он появится в toolbar'е.
-
-### Virtualbox
+### Загрузить vagrant-образ для тестовой среды
 
 ```bash
-$ brew cask install virtualbox
+> vagrant box add stereohorse/alfa-infra-sandbox
 ```
 
-### Vagrant
+### Создать учётную запись на Docker Hub
+
+Вот [здесь](https://hub.docker.com/). Затем нужно залогиниться из командной строки:
 
 ```bash
-$ brew cask install vagrant
+> docker login
 ```
 
-### Ansible
+## Проверяем установку
 
 ```bash
-$ brew install ansible
+git clone git@github.com:stereohorse/service-discovery-workshop.git
+cd service-discovery-workshop
+vagrant up
 ```
 
-### Python 3
+После этого открываем в браузере:
+
+1. [vm1:5050](http://vm1:5050)
+2. [vm2:8080](http://vm1:8080)
+
+Должны открыться UI Mesos и Marathon. После этого останавливаем виртуальные машины:
 
 ```bash
-$ brew install python3
-```
-
-### Образ для vagrant
-
-```bash
-$ vagrant box add stereohorse/alfa-infra-sandbox
+> vagrant suspend
 ```
